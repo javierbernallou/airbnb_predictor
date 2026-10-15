@@ -1,6 +1,6 @@
 # Airbnb Predictor
 
-Proyecto para analizar alojamientos de Airbnb en Londres y detectar oportunidades de compra o alquiler con precio por debajo del valor estimado por un modelo predictivo.
+Proyecto para analizar alojamientos de Airbnb en Londres y detectar oportunidades de alquiler con precio por debajo del valor estimado por un modelo predictivo.
 
 La aplicación combina un pipeline de preparación de datos, un modelo de regresión basado en XGBoost y una interfaz web con Streamlit para explorar chollos por barrio, tipo de vivienda y nivel de equipamiento.
 
@@ -141,18 +141,11 @@ Cuando la diferencia es negativa, el alojamiento está por debajo de lo que el m
 
 El repositorio incluye archivos bajo `data/raw` y `data/processed` para ejecutar o probar el proyecto.
 
-## Recomendaciones futuras
+## Mejoras futuras
 
 - Añadir tests automáticos
 - Añadir Dockerfile para despliegue reproducible
 - Mejorar la gestión de dependencias y versiones
-- Añadir CI con GitHub Actions
-- Definir una licencia del proyecto
 
-## Nota
 
-Este proyecto está orientado a análisis y demostración de un modelo predictivo de precios para Airbnb. No sustituye la valoración profesional de un inmobiliario ni la experiencia del mercado local.
 
----
-
-Si deseas, puedo dejarte una versión aún más profesional del README con badges, tabla de contenido y estructura similar a un proyecto de portfolio o para GitHub.
