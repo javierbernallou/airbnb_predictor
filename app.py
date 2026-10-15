@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import pydeck as pdk
 import streamlit as st
 
-st.set_page_config(page_title="Airbnb Londres · Precio justo", page_icon="🏙️", layout="wide")
+st.set_page_config(page_title="Airbnb Londres · Buscador de chollos", layout="wide")
 
 DATA_PATH = "data/processed/listings_scored.csv.gz"
 CATS = ["Infravalorado", "Precio justo", "Sobrevalorado"]
@@ -78,7 +78,7 @@ if bor_sel:
     mask &= df["borough"].isin(bor_sel)
 f = df[mask]
 
-st.title("¿Está bien de precio este Airbnb de Londres?")
+st.title("Buscador de apartamentos por debajo de su precio estimado")
 st.caption("Precio real frente al precio que el modelo considera justo según tamaño, ubicación y equipamiento.")
 if f.empty:
     st.warning("Ningún alojamiento cumple estos filtros. Amplía alguno en la barra lateral.")
@@ -93,7 +93,7 @@ k[3].metric("Infravalorados", f"{infra.mean():.1%}")
 k[4].metric("Sobrevalorados", f"{sobre.mean():.1%}")
 k[5].metric("Ahorro medio infravalorados", f"£{(f['pred_price'] - f['price'])[infra].mean():,.0f}" if infra.any() else "–")
 
-t_map, t_res, t_pre, t_mod, t_cho = st.tabs(["🗺️ Mapa", "📊 Resumen", "💷 Precios", "🎯 Modelo", "🔥 Chollos"])
+t_map, t_res, t_pre, t_mod, t_cho = st.tabs(["Mapa", "Resumen", "Precios", "Modelo", "Chollos"])
 
 with t_map:
     m = f if len(f) <= MAX_POINTS else f.sample(MAX_POINTS, random_state=1)
